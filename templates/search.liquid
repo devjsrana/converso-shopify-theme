@@ -1,0 +1,37 @@
+{% paginate search.results by 36 %}
+<div id="searchPage" class="position-relative">
+  {% if search.performed %}
+  <section class="product">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        {% for item in search.results %}
+
+        <div class="col-12 col-sm-6 col-md-3 mb-5">
+          <a class="text-decoration-none text-dark h-100 d-flex flex-column justify-content-end" href="{{ item.url | within: collection }}">
+            <div class="product__card mx-auto">
+              <div class="product__image">
+                <img class="w-100 h-100" src="{{ item.featured_image.src | img_url: 'large' }}"
+                  alt="{{ item.featured_image.alt | escape }}">
+              </div>
+              <span class="product__name">{{ item.title }}</span>
+              <div class="product__footer d-flex justify-content-between">
+                <span>{{ item.vendor }}</span>
+                <span>{{ item.price | money }}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% else %}
+        no results
+        {% endfor %}
+
+      </div>
+    </div>
+
+    <div class="search-pagination">
+      {% if paginate.pages > 1 %}{{ paginate | default_pagination }}{% endif %}
+    </div>
+  </section>
+  {% endif %}
+</div>
+{% endpaginate %}

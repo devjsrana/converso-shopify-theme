@@ -1,0 +1,57 @@
+{% if page_title != "Tear Sheet" %}
+
+<footer class="mt-5 pt-5 pb-2">
+    <div class="container-fluid">
+        <div class="d-flex pt-5 justify-content-space align-items-center">
+            <div class="footer__content">
+                <ul>
+                    <li>
+                        <a href="tel:{{ settings.info__contactNumber }}">{{ settings.info__contactNumber }}</a>
+                    </li>
+                    <li>
+                        <a href="mailto:{{ settings.info__contactEmail }}">{{ settings.info__contactEmail }}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact footer__content">
+                <ul>
+                    <li>
+                        <a href="/contact">{{ settings.info__address1 }}</a>
+                    </li>
+                    <li>
+                        <a href="/contact">{{ settings.info__address2 }}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <ul>
+                    {% for link in linklists.footer.links %}
+                    <li><a class="text-uppercase" href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="footer__content footer__rules">
+                <ul>
+                    {% for link in linklists.footer-menu-2.links %}
+                    <li><a class="text-uppercase" href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="footer__content footer__social">
+                <ul>
+                    {% for link in linklists.social-menu.links %}
+                        <li><a href="{{ link.url }}" target="_blank"><i class="fab fa-{{ link.title }}-square"></i></a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div id="converso-copyright" class="text-center text-uppercase mt-5">© <span class="footer__year"></span>
+            CONVERSOMOD.COM</div>
+    </div>
+</footer>
+
+{% endif %}

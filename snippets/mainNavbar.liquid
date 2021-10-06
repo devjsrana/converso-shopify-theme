@@ -1,0 +1,9 @@
+<div id="mainNav" class="navbar">
+    <div class="navbar__nav">
+        <ul class="text-center mt-5">
+            {% for link in linklists.main-menu.links %}
+            <li><a class="navbar__nav-item text-decoration-none {% if forloop.first %} active {% endif %} " href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+{% assign activeTag = "null" %}
+{% if current_tags %}
+{% assign activeTag =  current_tags | first %}
+{% endif %}
+
+<div id="shop">
+  {% if collection.title != "Design Miami" and collection.title != "CONVERSO CHICAGO" and collection.title != "Wall Decorations" %}
+  <section class="category-nav">
+    <div class="container-fluid">
+      <ul class="d-flex justify-content-space align-items-center flex-wrap">
+
+
+        {% for tag in collection.all_tags %}
+        {% assign ntag = tag | replace: ' ','-' | replace: '.','-' %}
+        <li class="py-2 px-3"><a
+            class="d-inline-block text-decoration-none {% if tag == activeTag %} active {% endif %}"
+            href="/collections/{{collection.handle}}/{{ ntag }}">{{ tag }}</a>
+        </li>
+        {% endfor %}
+
+        <li class="py-2 px-3"><a
+            class="d-inline-block text-decoration-none {% if current_tags %} {% else %} active {% endif %}"
+            href="/collections/{{collection.handle}}">All</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  {% endif %}
+
+
+  {% paginate collection.products by 36 %}
+  <section class="product position-relative">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+
+        {% for product in collection.products %}
+        <div class="col-12 col-sm-6 col-md-3 mb-5">
+          <a class="text-decoration-none text-dark h-100 d-flex flex-column justify-content-end"
+            href="{{ product.url | within: collection }}">
+            <div class="product__card mx-auto">
+              <div class="product__image">
+                <img class="w-100 h-100" src="{{ product.featured_image.src | img_url: 'large' }}"
+                  alt="{{ product.featured_image.alt | escape }}">
+              </div>
+              <span class="product__name">{{ product.title }}</span>
+              <div class="product__footer d-flex justify-content-between">
+                <span>{{ product.vendor }}</span>
+                {% if product.available and product.price > 0 %}
+                <span>{{ product.price | money }}</span>
+                {% else %}
+                <span>Inquire for price</span>
+                {% endif %}
+
+              </div>
+            </div>
+          </a>
+        </div>
+        {% else %}
+        <p>0 Product found</p>
+
+        {% endfor %}
+
+      </div>
+    </div>
+    <div class="search-pagination">
+      {% if paginate.pages > 1 %}{{ paginate | default_pagination }}{% endif %}
+    </div>
+  </section>
+
+  {% endpaginate %}
+</div>

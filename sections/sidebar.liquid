@@ -1,0 +1,62 @@
+<aside id="sidebar" class="">
+    <div class="position-relative">
+        <div class="search-box">
+            <form class="search" action="/search">
+                <input type="search" class="w-100 bg-transparent" placeholder="Search" name="q"
+                    value="{{ search.terms | escape }}" required />
+                <button class="w-100 bg-white text-uppercase" type="submit">Search</button>
+            </form>
+        </div>
+        <div class="cart-box">
+            <div class="cart-empty">
+                <p class="text-muted">— Your cart is empty.</p>
+            </div>
+            <div class="cart-list">
+                <h5 class="text-dark text-uppercase">cart</h5>
+                <div class="cart-list-items">
+                    <!-- <div class="row mt-3">
+                        <div class="col-1">
+                            <i class="fa fa-times text-dark cursor-pointer"></i>
+                        </div>
+                        <div class="col-8">
+                            <a class="text-decoration-none text-dark" href="/">This is demo products from cart.</a>
+                        </div>
+                    </div> -->
+                </div>
+
+                <a class="button--chackout bg-white" href="/checkout">CHECKOUT</a>
+            </div>
+        </div>
+
+        <div class="inquire-form">
+            <h3 class="text-dark" style="font-size: 18px;">INQUIRE</h3>
+            <div class="my-2">
+                <p class="text-dark mb-0"><b>TO: </b><a class="text-decoration-none text-dark"
+                        href="mailto:{{ settings.inquire__email }}">{{ settings.inquire__email }}</a></p>
+                <p class="text-dark" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"><b>RE:
+                    </b><span>{{ settings.inquire__text }}</span></p>
+            </div>
+            {% form 'contact' %}
+            {% if form.posted_successfully? %} <span class="text-success">Thank you for inquiring us</span> {% endif %}
+            <div class="form-group">
+                <label class="d-block text-dark" for="ContactFormName">Name *</label>
+                <input type="text" id="ContactFormName" name="contact[name]" required>
+            </div>
+            <div class="form-group">
+                <label class="d-block text-dark" for="ContactFormPhone">Phone *</label>
+                <input type="text" id="ContactFormPhone" name="contact[phone]" required>
+            </div>
+            <div class="form-group">
+                <label class="d-block text-dark" for="ContactFormEmail">Email *</label>
+                <input type="email" id="ContactFormEmail" name="contact[email]" required>
+            </div>
+            <div class="form-group">
+                <label class="d-block text-dark" for="ContactFormMessage">Message *</label>
+                <textarea name="contact[message]" id="ContactFormMessage" rows="5" required></textarea>
+            </div>
+
+            <input type="submit" class="text-uppercase bg-light" {% if form.posted_successfully? %} disabled {% endif %} value="{% if form.posted_successfully? %} Submited {% else %} Submit {% endif %}">
+            {% endform %}
+        </div>
+    </div>
+</aside>

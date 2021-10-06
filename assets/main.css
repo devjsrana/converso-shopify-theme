@@ -1,0 +1,943 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Archivo", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: 0.05em;
+    line-height: 1.618;
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+/* ==================================== GLOBAL STYLE START =================================== */
+.g-recaptcha {
+    margin-top: 100px !important;
+}
+.noscroll {
+    overflow: hidden;
+}
+
+.container-fluid {
+    width: 96%;
+    padding: 0;
+}
+
+.d-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.w-fit {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+.justify-content-space {
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+}
+
+/* ==================================== GLOBAL STYLE ENDS =================================== */
+
+/* ==================================== MAIN STYLE START =================================== */
+main {
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+main.moveleft {
+    -webkit-transform: translateX(-300px);
+    transform: translateX(-300px);
+}
+/* ==================================== MAIN STYLE END =================================== */
+
+/* ==================================== SIDEBAR START =================================== */
+#sidebar {
+    width: 300px;
+    height: 100vh;
+    background-color: #e5e1da;
+    color: white;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    z-index: 15;
+    padding: 10px;
+    padding-top: 100px;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+#sidebar.open {
+    -webkit-transform: translateX(-300px);
+    transform: translateX(-300px);
+}
+
+@media (max-width: 450px) {
+    #sidebar {
+        width: 100%;
+        right: -100%;
+    }
+    #sidebar.open {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+#sidebar.query-search .search-box {
+    -webkit-transform: translateX(-50%) !important;
+    transform: translateX(-50%) !important;
+}
+
+#sidebar.query-cart .cart-box {
+    -webkit-transform: translateX(-50%) !important;
+    transform: translateX(-50%) !important;
+}
+
+#sidebar.query-inquire .inquire-form {
+    -webkit-transform: translateX(-50%) !important;
+    transform: translateX(-50%) !important;
+}
+
+
+
+.search-box::-webkit-scrollbar,
+.cart-box::-webkit-scrollbar,
+.inquire-form::-webkit-scrollbar {
+    display: none;
+}
+
+.search-box,
+.cart-box,
+.inquire-form {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.search-box {
+    position: absolute;
+    left: 50%;
+    width: 90%;
+    max-width: 300px;
+    padding-top: 100px;
+    -webkit-transform: translateX(150%);
+    transform: translateX(150%);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.search-box input {
+    height: 40px;
+    padding: 5px;
+    border: 2px solid white;
+    outline: none;
+}
+
+.search-box button {
+    margin-top: 30px;
+    border: 2px solid transparent;
+    height: 50px;
+    font-size: 18px;
+    outline: none;
+}
+
+.search-box button:focus {
+    border-color: gray;
+}
+
+.cart-box {
+    position: absolute;
+    left: 50%;
+    width: 90%;
+    max-width: 300px;
+    padding-top: 100px;
+    -webkit-transform: translateX(150%);
+    transform: translateX(150%);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.cart-box .button--chackout {
+    margin-top: 30px;
+    border: 2px solid transparent;
+    font-size: 18px;
+    outline: none;
+    position: relative;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.cart-box .button--chackout:focus {
+    border-color: gray;
+}
+
+.inquire-form {
+    position: absolute;
+    left: 50%;
+    width: 90%;
+    max-width: 300px;
+    padding-top: 100px;
+    -webkit-transform: translateX(150%);
+    transform: translateX(150%);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.inquire-form form label {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.inquire-form form input,
+.inquire-form form textarea {
+    width: 100%;
+    border: 2px solid white;
+    background-color: #e5e1da;
+    padding: 5px;
+    outline: none;
+}
+
+.inquire-form form input[type="submit"] {
+    position: relative;
+    display: block;
+    margin: 30px 0;
+    font-size: 18px;
+    line-height: 60px;
+    text-align: center;
+    outline: 0;
+    cursor: pointer;
+}
+/* ==================================== SIDEBAR END =================================== */
+
+/* ==================================== HEADER STYLE START =================================== */
+header {
+    padding: 30px 65px;
+}
+.header-bg {
+    position: fixed;
+    height: 95px;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+}
+
+.logo {
+    width: 220px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+#mainNav{
+    overflow-y: auto;
+}
+.nav-items {
+    font-size: 22px;
+    color: black;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.nav-items #navTogglerBtnClose {
+    display: none;
+}
+
+.nav-items i {
+    margin: 0 15px;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+
+.nav-items i:hover {
+    opacity: 0.7;
+}
+
+.nav-items.nav-open #navTogglerBtnOpen,
+.nav-items.open-sidebar #navTogglerBtnOpen {
+    display: none;
+}
+
+.nav-items.nav-open #navTogglerBtnClose,
+.nav-items.open-sidebar #navTogglerBtnClose {
+    display: unset;
+}
+
+@media (max-width: 767px) {
+    header {
+        padding: 20px 5px;
+    }
+    .logo {
+        width: 165px;
+    }
+    .nav-items {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 575px) {
+    .logo {
+        left: 86px !important;
+    }
+}
+/* ==================================== HEADER STYLE END =================================== */
+
+/* ==================================== NAVABAR STYLE START =================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 16;
+    background-color: #ffffffcc;
+    display: none;
+}
+
+.navbar.show {
+    display: block;
+}
+
+.navbar .navbar__nav {
+    padding: 100px 0;
+}
+
+.navbar .navbar__nav-item {
+    display: block;
+    font-size: 24px;
+    line-height: 40px;
+    color: black;
+}
+
+.navbar .navbar__nav-item.active {
+    text-decoration: underline !important;
+    text-transform: uppercase;
+}
+
+.navbar .navbar__nav-item:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+    .navbar .navbar__nav {
+        padding: 100px 0;
+    }
+    .navbar .navbar__nav-item {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+/* ==================================== NAVABAR STYLE END =================================== */
+
+/* ==================================== HERO STYLE START =================================== */
+.hero {
+    height: 100vh;
+    width: 100vw;
+}
+
+.hero .hero-slider .item {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero .hero-slider .item::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 1;
+    -webkit-transition-duration: 1.5s;
+    transition-duration: 1.5s;
+}
+
+.hero .hero-slider .item a {
+    position: absolute;
+    z-index: 1;
+}
+
+.hero .hero-slider .item .innerbox {
+    width: 95%;
+    max-width: 678px;
+    opacity: 0;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.hero .hero-slider .item:hover .innerbox {
+    opacity: 0.8;
+}
+
+.hero .hero-slider .active .item::after {
+    opacity: 0;
+}
+
+.hero .hero-slider .owl-dots {
+    margin-top: 0px;
+    z-index: 1;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+
+.hero .hero-slider .owl-dot {
+    outline: none;
+}
+
+.hero .hero-slider .owl-dot span {
+    width: 13px;
+    height: 13px;
+    margin: 5px 2px;
+}
+/* ==================================== HERO STYLE END =================================== */
+
+/* ==================================== FEATURED PRODUCT STYLE STARTS =================================== */
+.feature .featured-product {
+    color: black;
+    font-size: 18px;
+}
+
+.feature .featured-product-image {
+    padding-top: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.feature .featured-product .lg {
+    padding-top: 150%;
+}
+
+.feature .featured-product hr {
+    border-top: 2px solid #e5e1da;
+}
+/* ==================================== FEATURED PRODUCT STYLE END =================================== */
+
+/* ==================================== FOOTER STYLE START =================================== */
+footer {
+    background-color: #e5e1da;
+    position: relative;
+    z-index: 20;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer a {
+    color: black !important;
+    font-size: 12px;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: gray !important;
+}
+
+footer a i {
+    font-size: 30px;
+}
+
+footer #converso-copyright {
+    color: #999;
+    font-size: 10px;
+}
+
+@media (max-width: 767px) {
+    footer .contact {
+        display: none;
+    }
+    footer a {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 546px) {
+    footer .d-flex {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    footer .footer__content {
+        min-width: 50%;
+    }
+    footer .footer__social ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    footer .footer__social ul li {
+        margin-right: 5px;
+    }
+    footer .footer__rules,
+    footer .footer__social {
+        margin-top: 20px;
+    }
+}
+/* ==================================== FOOTER STYLE END =================================== */
+
+/* ==============================================================   COLLECTION PAGE DESIGN   ============================================================= */
+#shop {
+    padding-top: 100px;
+    min-height: 87vh;
+}
+
+.category-nav {
+    margin-bottom: 100px;
+}
+
+.category-nav a {
+    height: 33px;
+    font-size: 21px;
+    line-height: 30px;
+    font-weight: 500;
+    color: black;
+}
+
+.category-nav a:hover {
+    opacity: 0.8;
+}
+
+.category-nav .active {
+    border-bottom: 2px solid #000;
+}
+
+@media (max-width: 767px) {
+    .category-nav {
+        margin-bottom: 100px;
+    }
+    .category-nav a {
+        font-size: 14px;
+    }
+}
+
+/*--------------------------product-------------------------*/
+.product .container-fluid {
+    max-width: 1440px !important;
+}
+
+.product__card {
+    max-width: 300px;
+}
+
+.product__name {
+    display: block;
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+    border-bottom: 1px solid #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product__footer span {
+    font-size: 11px;
+    line-height: 40px;
+}
+/* ==============================================================   COLLECTION PAGE DESIGN ENDS   ============================================================= */
+
+/* ==============================================================   PRODUCT DETAILS PAGE DESIGN START   ============================================================= */
+#product {
+    padding-top: 100px;
+    min-height: 87vh;
+}
+
+.product-slider #product-slider__prevArrow,
+.product-slider #product-slider__nextArrow {
+    position: absolute;
+    z-index: 2;
+    font-size: 35px;
+    opacity: 0.5;
+    padding: 10px;
+    top: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.product-slider #product-slider__prevArrow {
+    left: 35px;
+}
+
+.product-slider #product-slider__nextArrow {
+    right: 0;
+}
+
+.product-slider__slider .item {
+    height: 40vw;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    min-height: 350px;
+    max-height: 450px;
+}
+
+.product-info .container-fluid {
+    max-width: 960px !important;
+}
+
+.product-info .product__name {
+    font-size: 24px;
+}
+
+.product-info .product__price {
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.product-info .product__description {
+    font-size: 16px;
+}
+
+.product-info .product__buttons .button {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 60px;
+    background: #e5e1da;
+    text-align: center;
+    border: 2px solid #e5e1da;
+    outline: 0;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.product-info .product__buttons .button:hover {
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.product-info .product__buttons .button:focus-within {
+    border: 2px solid #d0c9bc;
+}
+
+@media (max-width: 767px) {
+    .product__buttons .button {
+        width: 80% !important;
+        margin: 40px auto;
+    }
+}
+
+/* --------------------------------RELATED PRODUCT DESIGN START------------------------------- */
+.related-product .container-fluid {
+    max-width: 1440px !important;
+}
+
+.related-product .title {
+    font-size: 18px;
+    margin-top: 4%;
+    margin-bottom: 3%;
+}
+
+.related-product .product__card {
+    max-width: 300px;
+}
+
+.related-product .product__name {
+    display: block;
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+    border-bottom: 1px solid #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.related-product .product__footer span {
+    font-size: 11px;
+    line-height: 40px;
+}
+/* --------------------------------RELATED PRODUCT DESIGN END------------------------------- */
+/* ==============================================================   PRODUCT DETAILS PAGE DESIGN ENDS   ============================================================= */
+
+/* ==============================================================   PRINT PRODUCT PAGE DESIGN START   ============================================================= */
+.print__ {
+    padding-top: 0px !important;
+}
+
+.print__ .container-fluid {
+    max-width: 700px;
+}
+
+.print__ .info-top-right {
+    max-width: 198px;
+}
+
+.print__ .info-top-right p {
+    font-size: 9px;
+    margin-left: 5px;
+    line-height: 10px;
+}
+
+.print__product-image {
+    height: 40vh;
+}
+
+.print__product-image img {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+/* ==============================================================   PRINT PRODUCT PAGE DESIGN ENDS   ============================================================= */
+
+/* ==============================================================   FULL SCREEN GALLERY SHOW PAGE DESIGN START   ============================================================= */
+.product-gallery-fullscreen {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1050;
+}
+
+.product-gallery-fullscreen.open {
+    display: block !important;
+}
+
+.product-gallery-fullscreen .product-fullscreen-close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 25px;
+    opacity: 1;
+    z-index: 1051;
+}
+
+.product-gallery-fullscreen .product-fullscreen-close-button:hover {
+    opacity: 0.6;
+}
+
+.product-gallery-fullscreen #product-fullscreen-slider__prevArrow,
+.product-gallery-fullscreen #product-fullscreen-slider__nextArrow {
+    position: absolute;
+    font-size: 30px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: 0.6;
+}
+
+.product-gallery-fullscreen #product-fullscreen-slider__prevArrow {
+    left: 15px;
+}
+
+.product-gallery-fullscreen #product-fullscreen-slider__nextArrow {
+    right: 15px;
+}
+
+.product-gallery-fullscreen .product-fullscreen-slider {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.product-gallery-fullscreen .product-fullscreen-slider__slider {
+    width: 80%;
+    margin: auto;
+}
+
+.product-gallery-fullscreen .product-fullscreen-slider__slider .item {
+    height: 60vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    max-height: 991px;
+}
+/* ==============================================================   FULL SCREEN GALLERY SHOW PAGE DESIGN ENDS   ============================================================= */
+
+/*==================================SEARCH PAGE DESIGN START==============================*/
+#searchPage {
+    padding-top: 100px;
+    min-height: 80vh;
+}
+.search-pagination {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -100px;
+    z-index: 30;
+}
+.search-pagination span {
+    background-color: white;
+    padding: 2px 15px;
+    border-radius: 15px;
+}
+
+@media (max-width: 767px) {
+    .search-pagination {
+        width: 95%;
+    }
+}
+/*==================================SEARCH PAGE DESIGN END==============================*/
+
+/* --------------------------ABOUT PAGE DESIGN --------------------------- */
+.about {
+    padding-top: 100px;
+}
+.about .text {
+    font-size: 18px;
+}
+.about .container {
+    max-width: 960px !important;
+}
+.about img {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+/* --------------------------ABOUT PAGE DESIGN ENDS --------------------------- */
+
+/*--------------------------------------- CONTACT PAGE DESIGN START -----------------------------------*/
+.contact__ {
+    padding-top: 100px;
+}
+
+.contact__ h1 {
+    font-size: 24px;
+}
+
+.contact__ h3 {
+    font-size: 18px;
+}
+
+.contact__ h4 {
+    font-size: 16px;
+}
+
+.contact__ a {
+    font-size: 18px;
+    color: black;
+}
+
+.contact__ a:hover {
+    opacity: 0.8;
+}
+
+.contact__ form label {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.contact__ form input,
+.contact__ form textarea {
+    width: 100%;
+    border: 2px solid #e5e1da;
+    padding: 5px;
+    outline: none;
+}
+
+.contact__ form input[type="submit"] {
+    position: relative;
+    display: block;
+    margin: 30px 0;
+    font-size: 18px;
+    line-height: 60px;
+    background: #e5e1da;
+    text-align: center;
+    outline: 0;
+    cursor: pointer;
+}
+
+.contact__footer {
+    background-color: #e5e1da;
+}
+
+.contact__footer .container {
+    max-width: 767px !important;
+}
+
+.contact__footer h3 {
+    font-weight: 100;
+    line-height: 28px;
+}
+/*--------------------------------------- CONTACT PAGE DESIGN END -----------------------------------*/
+
+/* =================================== FEED PAGE DESIGN START ========================= */
+#instafeed .post {
+    position: relative;
+    width: 100%;
+    height: 345px;
+    background: #000;
+    display: block;
+    overflow: hidden;
+}
+@media only screen and (max-width: 600px) {
+    #instafeed .post {
+        width: 100%;
+    }
+}
+#instafeed .post .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.15s ease-in-out;
+}
+#instafeed .post ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: #f69800;
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(-100%);
+    transition: all 0.15s ease-in-out;
+    color: #fff;
+}
+#instafeed .post ul li {
+    text-align: center;
+    line-height: 50px;
+}
+#instafeed .post:hover .image {
+    opacity: 0.5;
+    transform: scale(1.15) translate3d(0, 0, 0);
+}
+#instafeed .post:hover ul {
+    transform: translateX(0);
+}
+
+/* =================================== FEED PAGE DESIGN ENDS ========================= */

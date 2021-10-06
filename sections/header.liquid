@@ -1,0 +1,7 @@
+{% if page_title != "Tear Sheet" %}
+    <header class="fixed-top ">
+        {% include 'navbar' %}
+    </header>
+    <div class="header-bg {% if page_title != "Converso Chicago" %} bg-white {% endif %}"></div>
+    {% include 'mainNavbar' %}
+{% endif %}

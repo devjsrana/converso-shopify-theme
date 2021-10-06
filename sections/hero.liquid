@@ -1,0 +1,48 @@
+<div class="hero">
+    <div class="hero-slider owl-carousel owl-theme">
+
+        {% for block in section.blocks %}
+        {% assign imgurl = block.settings.hero__sliderBackground | img_url: 'master' %}
+        <div class="item position-relative" style="background-image: url('{{ imgurl }}');">
+            <a class="w-100 h-100" href="{{ section.settings.hero__sliderUrl }}">
+                <div class="innerbox d-center bg-white p-3">
+                    <img class="w-100" src="{{ block.settings.hero__sliderInnerImage | img_url: '1920x' }} }}"
+                        alt="hover">
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% schema %}
+{
+"name": "Slider Content",
+"blocks":
+[
+{
+"type": "image_picker",
+"name": "Hero Slider",
+"settings":
+[
+{
+"type":"image_picker",
+"id": "hero__sliderBackground",
+"label": "Slider Background"
+},
+{
+"type":"image_picker",
+"id": "hero__sliderInnerImage",
+"label": "Slider Inner Image"
+},
+{
+"type": "url",
+"id": "hero__sliderUrl",
+"label": "Target page link"
+}
+]
+}
+]
+}
+{% endschema %}

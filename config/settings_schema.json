@@ -1,0 +1,79 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Themekit template theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Shopify",
+    "theme_documentation_url": "https://github.com/Shopify/themekit",
+    "theme_support_url": "https://github.com/Shopify/themekit/issues"
+  },
+  {
+    "name": "Basic Information",
+    "settings": [
+      {
+        "type": "text",
+        "id": "info__contactNumber",
+        "label":"Contact Number",
+        "default": "+312.493.5366"
+      },
+      {
+        "type": "text",
+        "id": "info__contactEmail",
+        "label":"Contact Email Address",
+        "default": "info@conversomod.com"
+      },
+      {
+        "type": "text",
+        "id": "info__address1",
+        "label":"Address Line 1",
+        "default": "1118 N Ashland Ave, Chicago, IL 60622"
+      },
+      {
+        "type": "text",
+        "id": "info__address2",
+        "label":"Address Line 2",
+        "default": "1500 S Western Ave, Chicago, IL 60608"
+      },
+      {
+        "type": "text",
+        "id": "instaFeedurl",
+        "label":"Feed Url of Instagram",
+        "default": "https://www.instagram.com/conversomod"
+      }
+    ]
+  },
+  {
+    "name": "Inquire Information",
+    "settings": [
+      {
+        "type": "text",
+        "id": "inquire__email",
+        "label": "Inquire Email Address",
+        "default": "inquire@conversomod.com"
+      },
+      {
+        "type": "text",
+        "id": "inquire__text",
+        "label": "Inquire Text",
+        "default": "Edward Wormley for Dunbar Dresser with Natzler Tiles"
+      }
+    ]
+  },
+  {
+    "name": "Site Identity",
+    "settings": [
+      
+      {
+          "type":"image_picker",
+          "id": "site__logo",
+          "label": "Site Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "site__favicon",
+        "label":"Site Favicon Image"
+      }
+      
+    ]
+  }
+]

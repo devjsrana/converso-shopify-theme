@@ -1,0 +1,94 @@
+<div id="product">
+  <div class="product-slider position-relative">
+    <div>
+      <i class="cursor-pointer fas fa-chevron-left" id="product-slider__prevArrow"></i>
+      <i class="cursor-pointer fas fa-chevron-right" id="product-slider__nextArrow"></i>
+    </div>
+    <div class="product-slider__slider position-relative owl-carousel owl-theme">
+      {% for image in product.images %}
+      {% assign imgUrl = image.src | img_url: 'master' %}
+      <div class="item" style="background-image: url('{{ imgUrl }}');" slider-target="{{ forloop.index | minus: 1 }}">
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+
+  <section class="mt-5 product-info">
+    <div class="container-fluid">
+      <h3 class="product__name border-0 mb-2">{{ product.title }}</h3>
+      {% if product.available and product.price > 0 %}
+      <p class="product__price mb-0 border-bottom border-dark">{{ product.price | money }}</p>
+      {% else %}
+      <p class="product__price mb-0 border-bottom border-dark">Inquire for price</p>
+      {% endif %}
+
+
+      <div class="row my-5">
+        <div class="col-12 col-md-8">
+          {{ product.description }}
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="product__buttons">
+            {% if product.available and product.price > 0 %}
+            <button class="button text-uppercase"
+              onclick="addItemToCart('{{product.variants.first.id}}')">purchase</button>
+            {% endif %}
+
+            <button class="button text-uppercase" id="inquire">inquire</button>
+            <a class="button text-uppercase" href="/pages/tear-sheet/{{ product.handle }}" target="_blank">tear
+              sheet</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {%- if recommendations.products_count > 0 -%}
+  {% assign limit = 4 %}
+  <section class="related-product ">
+    <div class="container-fluid border-top border-dark">
+      <h3 class="title text-uppercase">SHOP RELATED</h3>
+
+      <div class="row">
+        {%- for product in recommendations.products -%}
+        <div class="col-6 col-md-3 mb-2">
+          <a class="text-decoration-none text-dark" href="{{ product.url | within: collection }}">
+            <div class="product__card mx-auto">
+              <div class="product__image">
+                <img class="w-100 h-100" src="{{ product.featured_image.src | img_url: 'large' }}"
+                  alt="{{ product.featured_image.alt | escape }}">
+              </div>
+              <span class="product__name">{{ product.title }}</span>
+              <div class="product__footer d-flex justify-content-between">
+                <span>{{ product.vendor }}</span>
+                <span>{{ product.price | money }}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        {%- endfor -%}
+
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+</div>
+
+<div class="product-gallery-fullscreen bg-white">
+  <i class="product-fullscreen-close-button cursor-pointer fa fa-times"></i>
+  <div class="product-fullscreen-slider position-relative">
+    <div>
+      <i class="cursor-pointer fas fa-chevron-left" id="product-fullscreen-slider__prevArrow"></i>
+      <i class="cursor-pointer fas fa-chevron-right" id="product-fullscreen-slider__nextArrow"></i>
+    </div>
+    <div class="product-fullscreen-slider__slider owl-carousel owl-theme">
+      {% for image in product.images %}
+      {% assign imgUrl = image.src | img_url: 'master' %}
+      <div class="item" style="background-image: url('{{ imgUrl }}');">
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

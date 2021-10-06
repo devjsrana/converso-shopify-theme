@@ -1,0 +1,43 @@
+{% assign productHandles = request.path | split: '/' | last %}
+<div id="tearSheet">
+    {% for products in productHandles %}
+    <div class="print__ mt-2">
+        <div class="container-fluid">
+
+            <div class="info-top-right ml-auto">
+                <img class="w-100" src="{{ settings.site__logo.src | img_url: 'master'}}" alt="CONVERSO">
+                <p>{{ settings.info__address1 }}<br>
+                    {{ settings.info__address2 }}<br><br>
+                    {{ settings.info__contactNumber }}<br>
+                    {{ settings.info__contactEmail }}</p>
+
+            </div>
+
+            <div class="print__product-image">
+                <img class="h-100" src="{{ all_products[products].featured_image | img_url: 'master'}}" alt="Not Found">
+            </div>
+
+
+            <section class="mt-5 product-info">
+                <h3 class="product__name mb-2">{{ all_products[products].title }}</h3>
+                <p class="product__price mb-0 border-bottom border-dark">{{ all_products[products].price | money }}</p>
+
+                <div class="row my-5">
+                    <div class="col-12">
+                        {{ all_products[products].content }}
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<script>
+    window.onload = (event) => {
+        setTimeout(() => {
+            window.print();
+        }, 1000);
+    };
+</script>

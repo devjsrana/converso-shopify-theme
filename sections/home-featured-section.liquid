@@ -1,0 +1,129 @@
+<section class="feature mt-2">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="row">
+                    {% for block in section.blocks %}
+                    {% if forloop.index == 1 %}
+                    {% assign imgurl = block.settings.feature__image | img_url: 'master' %}
+                    <div class="col-12">
+                        <a href="{{ block.settings.feature__url }}" class="text-decoration-none featured-product">
+                            <div class="featured-product-image" style="background-image: url('{{ imgurl }}');">
+                            </div>
+                            <hr>
+                            <p>SHOP <span class="text-capitalize font-weight-bold">{{ block.settings.feature__title }}</span></p>
+                        </a>
+
+                    </div>
+                    {% endif %}
+                    {% if forloop.index == 2 %}
+                    {% assign imgurl = block.settings.feature__image | img_url: 'master' %}
+                    <div class="col-12">
+                        <a href="{{ block.settings.feature__url }}" class="text-decoration-none featured-product">
+                            <div class="featured-product-image lg mt-5" style="background-image: url('{{ imgurl }}');">
+                            </div>
+                            <hr>
+                            <p>SHOP <span class="text-capitalize font-weight-bold">{{ block.settings.feature__title }}</span></p>
+                        </a>
+
+                    </div>
+                    {% endif %}
+                    {%- endfor -%}
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="row">
+                    {% for block in section.blocks %}
+                    {% if forloop.index == 3 %}
+                    {% assign imgurl = block.settings.feature__image | img_url: 'master' %}
+                    <div class="col-12">
+                        <a href="{{ block.settings.feature__url }}" class="text-decoration-none featured-product">
+                            <div class="featured-product-image lg" style="background-image: url('{{ imgurl }}');">
+                            </div>
+                            <hr>
+                            <p>SHOP <span class="text-capitalize font-weight-bold">{{ block.settings.feature__title }}</span></p>
+                        </a>
+
+                    </div>
+                    {% endif %}
+                    {% if forloop.index == 4 %}
+                    {% assign imgurl = block.settings.feature__image | img_url: 'master' %}
+                    <div class="col-12">
+                        <a href="{{ block.settings.feature__url }}" class="text-decoration-none featured-product">
+                            <div class="featured-product-image mt-5" style="background-image: url('{{ imgurl }}');">
+                            </div>
+                            <hr>
+                            <p>SHOP <span class="text-capitalize font-weight-bold">{{ block.settings.feature__title }}</span></p>
+                        </a>
+
+                    </div>
+                    {% endif %}
+                    {%- endfor -%}
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="row">
+                    {% for block in section.blocks %}
+                    {% if forloop.index == 5 %}
+                    {% assign imgurl = block.settings.feature__image | img_url: 'master' %}
+                    <div class="col-12">
+                        <a href="{{ block.settings.feature__url }}" class="text-decoration-none featured-product">
+                            <div class="featured-product-image" style="background-image: url('{{ imgurl }}');">
+                            </div>
+                            <hr>
+                            <p>SHOP <span class="text-capitalize font-weight-bold">{{ block.settings.feature__title }}</span></p>
+                        </a>
+
+                    </div>
+                    {% endif %}
+                    {% if forloop.index == 6 %}
+                    {% assign imgurl = block.settings.feature__image | img_url: 'master' %}
+                    <div class="col-12">
+                        <a href="{{ block.settings.feature__url }}" class="text-decoration-none featured-product">
+                            <div class="featured-product-image lg mt-5" style="background-image: url('{{ imgurl }}');">
+                            </div>
+                            <hr>
+                            <p>SHOP <span class="text-capitalize font-weight-bold">{{ block.settings.feature__title }}</span></p>
+                        </a>
+
+                    </div>
+                    {% endif %}
+                    {%- endfor -%}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+"name": "Feature Content",
+"blocks":
+[
+{
+"type": "image_picker",
+"name": "Feature Content",
+"settings":
+[
+{
+"type":"image_picker",
+"id": "feature__image",
+"label": "Image"
+},
+{
+"type":"text",
+"id": "feature__title",
+"label": "Title"
+},
+{
+"type": "url",
+"id": "feature__url",
+"label": "Target link"
+}
+]
+}
+]
+}
+{% endschema %}

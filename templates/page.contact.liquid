@@ -1,0 +1,119 @@
+<div class="contact__ mb-n5">
+  <div class="container-xl">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div>
+          <h3>CONTACT US</h3>
+          <p>Have questions about an inventory item, our process, or showrooms and exhibitions? Feel free
+            to reach out and let us know how our team can be of service.</p>
+        </div>
+
+        <div class="mt-5">
+          <h3><a class="text-decoration-none" href="/">+123654789</a></h3>
+          <h3><a class="text-decoration-none" href="/">rana@gmail.com</a></h3>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 mt-5 mt-md-0">
+        {% form 'contact' %}
+        {% if form.posted_successfully? %} <span class="text-success">Thank you for your contact</span> {% endif %}
+        <div class="form-group">
+          <label for="ContactFormName" class="d-block">Name *</label>
+          <input type="text" id="ContactFormName" name="contact[name]" required>
+        </div>
+        <div class="form-group">
+          <label for="ContactFormPhone" class="d-block">Phone *</label>
+          <input type="text" id="ContactFormPhone" name="contact[phone]" required>
+        </div>
+        <div class="form-group">
+          <label for="ContactFormEmail" class="d-block">Email *</label>
+          <input type="email" id="ContactFormEmail" name="contact[email]" required>
+        </div>
+        <div class="form-group mt-3">
+          <label for="ContactFormSubject" class="d-block">Subject/Product Name *</label>
+          <input type="text" id="ContactFormSubject" name="contact[subject]" required>
+        </div>
+        <div class="form-group mt-3">
+          <label for="ContactFormMessage" class="d-block">Message *</label>
+          <textarea name="contact[message]" id="ContactFormMessage" rows="5" required></textarea>
+        </div>
+
+        <input type="submit" class="text-uppercase" value="Submit">
+        {% endform %}
+
+        <p class="mt-5">
+          * Required
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="contact__footer py-5">
+    <div class="container">
+      <div class="text-center">
+        <h3 class="text-uppercase">VIEW IN PERSON</h3>
+        <h4 class="px-5">
+          All pieces on this site are located at one of our
+          showrooms and are available for viewing by
+          appointment or during open hours.
+        </h4>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-12 col-md-6">
+
+          <div class="row">
+            <div class="col-12">
+              <h3>CONVERSO SHOWROOM
+                1118 N Ashland Ave.
+                Chicago, IL 60622</h3>
+            </div>
+            <div class="col-12 mt-3">
+              <h3>Monday – Friday: 11 to 5
+                Saturday: 12 to 5
+                312.493.5366
+                <a href="https://www.google.com/maps/dir//1118+N+Ashland+Ave,+Chicago,+IL+60622/@41.9021095,-87.6700296,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x880fd2d1e0f073a3:0xb21c92e0cc58366c!2m2!1d-87.6678356!2d41.9021095" target="_blank" class="d-block text-decoration-none text-secondary">Directions</a></h3>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-12 col-md-6 mt-5 mt-md-0">
+
+          <div class="row">
+            <div class="col-12">
+              <h3>CONVERSO CHICAGO
+                1500 S. Western Ave.
+                Chicago, IL 60608</h3>
+            </div>
+            <div class="col-12 mt-3">
+              <h3>
+                By Appointment Only
+                312.493.5366
+                <a href="https://www.google.co.jp/maps/dir//1500+S+Western+Ave,+Chicago,+IL+60608,+USA/@41.8607356,-87.6891069,17z/data=!4m16!1m7!3m6!1s0x880e2d773465bb9d:0xbac14511499268fe!2s1500+S+Western+Ave,+Chicago,+IL+60608,+USA!3b1!8m2!3d41.8607356!4d-87.6869143!4m7!1m0!1m5!1m1!1s0x880e2d773465bb9d:0xbac14511499268fe!2m2!1d-87.6869143!2d41.8607356?hl=en" target="_blank" class="d-block text-decoration-none text-secondary">Directions</a>
+              </h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <h1>{{ page.title }}</h1>
+{% form 'contact' %}
+  {% if form.posted_successfully? %} Thank you for your contact {% endif %}
+  {{ form.errors | default_errors }}
+  <label for="ContactFormName">name</label>
+  <input type="text" id="ContactFormName" name="contact[name]">
+  <label for="ContactFormEmail">email</label>
+  <input type="email" id="ContactFormEmail" name="contact[email]">
+  <label for="ContactFormPhone">phone</label>
+  <input type="tel" id="ContactFormPhone" name="contact[phone]">
+  <label for="ContactFormMessage">message</label>
+  <textarea rows="10" id="ContactFormMessage" name="contact[body]"></textarea>
+  <input type="submit" value="send">
+{% endform %} 
+-->

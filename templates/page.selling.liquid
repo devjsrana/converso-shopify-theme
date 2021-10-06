@@ -1,0 +1,137 @@
+<div class="contact__ mb-n5">
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div>
+                    <h3>SELLING TO CONVERSO</h3>
+                    <p>Please use the form on the right to send us your personal information and upload images of the
+                        piece. Simple shots in any format or of any quality will do, as well as any information you may
+                        have about the piece, its history and its condition. We will review each and every piece that
+                        passes through our inbox, responding to you within a matter of days. You may submit images by
+                        email to consign@converso.com or by mail to any of the regional addresses listed at the bottom
+                        of the page.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 mt-5 mt-md-0">
+                {% form 'contact' %}
+                {% if form.posted_successfully? %} <span class="text-success">Thank you for your contact</span>
+                {% endif %}
+
+                <div class="row">
+                    <div class="col-8">
+                        <div class="form-group">
+                            <label for="ContactFormName" class="d-block">Name *</label>
+                            <input type="text" id="ContactFormName" name="contact[name]" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ContactFormPhone" class="d-block">Phone *</label>
+                            <input type="text" id="ContactFormPhone" name="contact[phone]" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ContactFormEmail" class="d-block">Email *</label>
+                            <input type="email" id="ContactFormEmail" name="contact[email]" required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="ContactFormCity" class="d-block">City *</label>
+                            <input type="text" id="ContactFormCity" name="contact[city]" required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="ContactFormState" class="d-block">State *</label>
+                            <input type="text" id="ContactFormState" name="contact[state]" required>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="ContactFormPhoto1" class="d-block">Photo1</label>
+                            <input type="file" class="border-0" id="ContactFormPhoto1" name="contact[photo1]">
+                        </div>
+                        <div class="form-group">
+                            <label for="ContactFormPhoto2" class="d-block">Photo2</label>
+                            <input type="file" class="border-0" id="ContactFormPhoto2" name="contact[photo2]">
+                        </div>
+                        <div class="form-group">
+                            <label for="ContactFormPhoto3" class="d-block">Photo3</label>
+                            <input type="file" class="border-0" id="ContactFormPhoto3" name="contact[photo3]">
+                        </div>
+                        <div class="form-group">
+                            <label for="ContactFormPhoto4" class="d-block">Photo4</label>
+                            <input type="file" class="border-0" id="ContactFormPhoto4" name="contact[photo4]">
+                        </div>
+                        <div class="form-group">
+                            <label for="ContactFormPhoto5" class="d-block">Photo5</label>
+                            <input type="file" class="border-0" id="ContactFormPhoto5" name="contact[photo5]">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="ContactFormDescription" class="d-block">Description *</label>
+                    <textarea name="contact[description]" id="ContactFormDescription" rows="5" required></textarea>
+                </div>
+
+                <input type="submit" class="text-uppercase" value="Submit">
+                {% endform %}
+
+                <p class="mt-5">
+                    * Required
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="contact__footer py-5">
+        <div class="container">
+            <div class="text-center">
+                <h3 class="text-uppercase">VIEW IN PERSON</h3>
+                <h4 class="px-5">
+                    All pieces on this site are located at one of our
+                    showrooms and are available for viewing by
+                    appointment or during open hours.
+                </h4>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12 col-md-6">
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>CONVERSO SHOWROOM
+                                1118 N Ashland Ave.
+                                Chicago, IL 60622</h3>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <h3>Monday – Friday: 11 to 5
+                                Saturday: 12 to 5
+                                312.493.5366
+                                <a href="https://www.google.com/maps/dir//1118+N+Ashland+Ave,+Chicago,+IL+60622/@41.9021095,-87.6700296,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x880fd2d1e0f073a3:0xb21c92e0cc58366c!2m2!1d-87.6678356!2d41.9021095"
+                                    target="_blank" class="d-block text-decoration-none text-secondary">Directions</a>
+                            </h3>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12 col-md-6 mt-5 mt-md-0">
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>CONVERSO CHICAGO
+                                1500 S. Western Ave.
+                                Chicago, IL 60608</h3>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <h3>
+                                By Appointment Only
+                                312.493.5366
+                                <a href="https://www.google.co.jp/maps/dir//1500+S+Western+Ave,+Chicago,+IL+60608,+USA/@41.8607356,-87.6891069,17z/data=!4m16!1m7!3m6!1s0x880e2d773465bb9d:0xbac14511499268fe!2s1500+S+Western+Ave,+Chicago,+IL+60608,+USA!3b1!8m2!3d41.8607356!4d-87.6869143!4m7!1m0!1m5!1m1!1s0x880e2d773465bb9d:0xbac14511499268fe!2m2!1d-87.6869143!2d41.8607356?hl=en"
+                                    target="_blank" class="d-block text-decoration-none text-secondary">Directions</a>
+                            </h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

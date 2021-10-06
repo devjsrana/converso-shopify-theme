@@ -1,0 +1,28 @@
+<div style="padding-top: 100px;">
+    <div class="container" style="max-width: 960px !important; min-height: 80vh;">
+
+        <div id="insta">
+            <div class="container">
+                <div id="instafeed" class="row justify-content-md-center no-gutters">
+                    <p class="p-5 text-center">Loading...</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<input id="instaUrl" hidden type="text" value="{{ settings.instaFeedurl }}">
+
+
+<script type="text/javascript">
+    var instaUrl = document.getElementById('instaUrl').value;
+    document.addEventListener("DOMContentLoaded", function (event) {
+        setTimeout(() => {
+
+            if (instaUrl && instaUrl.length > 10) {
+                getInsta(instaUrl);
+            }
+        }, 1000);
+    });
+</script>
